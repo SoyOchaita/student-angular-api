@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>📋 Listado de Estudiantes</h2>
+
+  <!-- Botón para crear nuevo -->
+  <button class="btn-add" (click)="goToAdd()">➕ Agregar Estudiante</button>
+
+  <!-- Loader -->
+  <div *ngIf="loading">Cargando...</div>
+
+  <!-- Tabla con estudiantes -->
+  <table *ngIf="!loading && students.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.identifier }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.surname }}</td>
+        <td>
+          <button class="btn-edit" (click)="editStudent(student.identifier)">✏️ Editar</button>
+          <button class="btn-delete" (click)="deleteStudent(student.identifier)">🗑️ Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Mensaje cuando no hay registros -->
+  <div *ngIf="!loading && students.length === 0">
+    No hay estudiantes registrados.
+  </div>
+</div>

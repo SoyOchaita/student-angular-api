@@ -1,0 +1,58 @@
+/* ===== Layout base ===== */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* ===== Encabezado ===== */
+.header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ===== Contenido ===== */
+.content {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* ===== Pie de página ===== */
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.8rem;
+  color: #777;
+  border-top: 1px solid #e1e1e1;
+  background-color: #fafafa;
+}
+
+/* ===== Botones globales ===== */
+button {
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

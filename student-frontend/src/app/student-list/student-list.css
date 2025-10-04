@@ -1,0 +1,51 @@
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+table {
+  width: 100%;  
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #f4f4f4;
+}
+
+button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-edit {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  border: none;
+}
