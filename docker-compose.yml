@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: studentsdb
+    ports:
+      - "5435:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: ./student-api
+    command: node src/index.js
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./student-api:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: admin
+      DB_PASSWORD: admin123
+      DB_NAME: studentsdb
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
