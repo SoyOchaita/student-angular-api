@@ -24,7 +24,7 @@ export class StudentListComponent implements OnInit {
   loadStudents(): void {
     this.studentService.getStudents().subscribe({
       next: (data) => {
-        this.students = data; // 👈 data ya es el array de estudiantes
+        this.students = data; 
         this.loading = false;
       },
       error: (err) => {
@@ -43,11 +43,18 @@ export class StudentListComponent implements OnInit {
   }
 
   deleteStudent(id: string): void {
-    if (confirm('¿Seguro que deseas eliminar este estudiante?')) {
-      this.studentService.deleteStudent(id).subscribe({
-        next: () => this.loadStudents(),
-        error: (err) => console.error('Error eliminando estudiante', err)
-      });
-    }
+  if (confirm('¿Seguro que deseas eliminar este estudiante?')) {
+    this.studentService.deleteStudent(id).subscribe({
+      next: () => {
+        alert('🗑️ Estudiante eliminado correctamente.');
+        this.loadStudents();
+      },
+      error: (err) => {
+        console.error('Error al eliminar estudiante', err);
+        alert(`❌ No se pudo eliminar: ${err.message}`);
+      }
+    });
   }
+}
+
 }

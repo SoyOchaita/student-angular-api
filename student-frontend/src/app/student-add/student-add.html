@@ -1,1 +1,46 @@
-<p>student-add works!</p>
+<div class="container">
+  <h2>➕ Agregar Estudiante</h2>
+
+  <form (ngSubmit)="addStudent()" #studentForm="ngForm">
+    <div class="form-group">
+      <label for="identifier">Carné:</label>
+      <input
+        type="text"
+        id="identifier"
+        name="identifier"
+        required
+        [(ngModel)]="student.identifier"
+        placeholder="Ejemplo: 202325519"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        [(ngModel)]="student.name"
+        placeholder="Nombre del estudiante"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="surname">Apellido:</label>
+      <input
+        type="text"
+        id="surname"
+        name="surname"
+        required
+        [(ngModel)]="student.surname"
+        placeholder="Apellido del estudiante"
+      />
+    </div>
+
+    <button type="submit" class="btn-save" [disabled]="studentForm.invalid">
+      Guardar Estudiante
+    </button>
+    <button type="button" class="btn-cancel" (click)="goBack()">Cancelar</button>
+  </form>
+</div>
